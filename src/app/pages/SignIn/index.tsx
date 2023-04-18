@@ -5,7 +5,8 @@ import logo from "@/app/assets/images/logo.svg";
 import * as S from "./styles";
 
 export function SignIn() {
-  const { loadings, form } = authenticationUseCase();
+  const { loadings, form, onSumbit } = authenticationUseCase();
+  const { handleSubmit } = form;
   const { loading, setLoading } = loadings;
 
   const {
@@ -13,17 +14,10 @@ export function SignIn() {
     formState: { isValid, errors },
   } = form;
 
-  const handleSubmit = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  };
-
   return (
     <S.Container>
       <img src={logo} alt="Logo do projeto" />
-      <S.Form onSubmit={handleSubmit}>
+      <S.Form onSubmit={handleSubmit(onSumbit)}>
         <p>
           Ofereça <strong> spots</strong> para programadores e encontre{" "}
           <strong>talentos</strong> para sua empresa.
