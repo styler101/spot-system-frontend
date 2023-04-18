@@ -1,22 +1,28 @@
 import React from "react";
-import { ErrorLabel, Button, Input } from "@/app/components";
+import { ErrorLabel, Spinner, Button, Input } from "@/app/components";
 import { authenticationUseCase } from "./custom-hooks";
 import logo from "@/app/assets/images/logo.svg";
 import * as S from "./styles";
 
 export function SignIn() {
   const { loadings, form } = authenticationUseCase();
+  const { loading, setLoading } = loadings;
   const {
     register,
     formState: { isValid, errors },
   } = form;
 
-  console.log(isValid);
+  const handleSubmit = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
 
   return (
     <S.Container>
       <img src={logo} alt="Logo do projeto" />
-      <S.Form>
+      <S.Form onSubmit={handleSubmit}>
         <p>
           Ofereça <strong> spots</strong> para programadores e encontre{" "}
           <strong>talentos</strong> para sua empresa.
@@ -32,7 +38,13 @@ export function SignIn() {
             {errors.email?.message && (
               <ErrorLabel message={errors.email.message} />
             )}
-            <Button type="submit"> Entrar</Button>
+            <Button type="submit" disabled={true}>
+              {loading ? (
+                <Spinner width="32px" height="32px" />
+              ) : (
+                <React.Fragment> Salvar</React.Fragment>
+              )}
+            </Button>
           </label>
         </div>
       </S.Form>

@@ -18,4 +18,8 @@ export const Button = styled.button`
   &:hover {
     filter: brightness(90%);
   }
+
+  &:disabled {
+    background-color: #ccc !important;
+  }
 `;
