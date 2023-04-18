@@ -1,9 +1,18 @@
 import React from "react";
-import { Input, Button } from "@/app/components/Form";
+import { ErrorLabel, Button, Input } from "@/app/components";
+import { authenticationUseCase } from "./custom-hooks";
 import logo from "@/app/assets/images/logo.svg";
 import * as S from "./styles";
 
 export function SignIn() {
+  const { loadings, form } = authenticationUseCase();
+  const {
+    register,
+    formState: { isValid, errors },
+  } = form;
+
+  console.log(isValid);
+
   return (
     <S.Container>
       <img src={logo} alt="Logo do projeto" />
@@ -15,7 +24,14 @@ export function SignIn() {
         <div>
           <label htmlFor="email">
             <span> E-mail* </span>
-            <Input placeholder="Digite o seu melhor email" />
+            <Input
+              placeholder="Digite o seu melhor email"
+              {...register("email")}
+              error={Boolean(errors.email)}
+            />
+            {errors.email?.message && (
+              <ErrorLabel message={errors.email.message} />
+            )}
             <Button type="submit"> Entrar</Button>
           </label>
         </div>
