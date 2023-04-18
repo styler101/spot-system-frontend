@@ -5,4 +5,5 @@ export const ErrorLabel = styled.span`
   display: block;
   color: #f05a5b;
   text-transform: none;
+  font-size: 15px;
 `;

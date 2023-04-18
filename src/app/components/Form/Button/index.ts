@@ -9,11 +9,11 @@ export const Button = styled.button`
   border: 1px solid #c8c8c8;
   font-size: 15px;
   background-color: #f05a5b;
-  margin-top: 16px;
   color: #fff;
   font-weight: bold;
   border: 0;
   cursor: pointer;
+  margin-top: 14px;
 
   &:hover {
     filter: brightness(90%);

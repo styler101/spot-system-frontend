@@ -25,21 +25,21 @@ export const Form = styled.form`
     font-size: 18px;
     line-height: 20px;
   }
+`;
 
-  div {
-    width: 100%;
-    padding-top: 8px;
-    margin-top: 16px;
-    label {
-      font-weight: normal;
-      font-size: 16px;
-      text-transform: uppercase;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
-    }
+export const Field = styled.div`
+  width: 100%;
+  padding-top: 8px;
+  margin-top: 16px;
+  label {
+    font-weight: normal;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
   }
 `;

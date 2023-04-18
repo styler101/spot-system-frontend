@@ -7,6 +7,7 @@ import * as S from "./styles";
 export function SignIn() {
   const { loadings, form } = authenticationUseCase();
   const { loading, setLoading } = loadings;
+
   const {
     register,
     formState: { isValid, errors },
@@ -27,26 +28,27 @@ export function SignIn() {
           Ofereça <strong> spots</strong> para programadores e encontre{" "}
           <strong>talentos</strong> para sua empresa.
         </p>
-        <div>
+        <S.Field>
           <label htmlFor="email">
             <span> E-mail* </span>
             <Input
               placeholder="Digite o seu melhor email"
               {...register("email")}
+              autoComplete="off"
               error={Boolean(errors.email)}
             />
             {errors.email?.message && (
               <ErrorLabel message={errors.email.message} />
             )}
-            <Button type="submit" disabled={true}>
+            <Button type="submit" disabled={loading || !isValid}>
               {loading ? (
-                <Spinner width="32px" height="32px" />
+                <Spinner width="16px" height="16px" />
               ) : (
                 <React.Fragment> Salvar</React.Fragment>
               )}
             </Button>
           </label>
-        </div>
+        </S.Field>
       </S.Form>
     </S.Container>
   );

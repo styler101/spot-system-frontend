@@ -23,7 +23,7 @@ export const Input = styled.input<InputProps>`
       border-color: #f05a5b;
       background-color: #fce4e4;
       input {
-        color: #fce4e4;
+        color: #f05a5b;
       }
     `}
 `;
