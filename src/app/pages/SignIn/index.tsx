@@ -1,14 +1,13 @@
 import React from "react";
+import logo from "@/app/assets/images/logo.svg";
 import { ErrorLabel, Spinner, Button, Input } from "@/app/components";
 import { authenticationUseCase } from "./custom-hooks";
-import logo from "@/app/assets/images/logo.svg";
 import * as S from "./styles";
 
 export function SignIn() {
   const { loadings, form, onSumbit } = authenticationUseCase();
   const { handleSubmit } = form;
-  const { loading, setLoading } = loadings;
-
+  const { loading } = loadings;
   const {
     register,
     formState: { isValid, errors },

@@ -6,8 +6,7 @@ import { FormData } from "./interfaces";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-export function authenticationUseCase() {
-  const [loading, setLoading] = React.useState<boolean>(false);
+export function formValidation() {
   const form = useForm<FormData>({
     mode: "onBlur",
     reValidateMode: "onBlur",
@@ -21,6 +20,14 @@ export function authenticationUseCase() {
     form.register("email");
   }, []);
 
+  return {
+    form,
+  };
+}
+
+export function authenticationUseCase() {
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const { form } = formValidation();
   const onSumbit = async ({ email }: FormData): Promise<void> => {
     setLoading(true);
     try {
