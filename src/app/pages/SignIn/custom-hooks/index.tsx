@@ -2,7 +2,7 @@ import React from "react";
 import { toast } from "react-toastify";
 import schema from "../schema";
 import { authentication } from "../services";
-import { FormData } from "./interfaces";
+import { FormData } from "./protocols/interfaces";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
