@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 import schema from "../schema";
 import { authentication } from "../services";
 import { FormData } from "./interfaces";
@@ -25,10 +26,12 @@ export function authenticationUseCase() {
     try {
       const { id } = await authentication(email);
       localStorage.setItem("@aircnc:user_id", id);
+      toast.success("Usuário Autencidado!");
     } catch (error) {
-      console.log(error);
+      toast.error("Já Existe um usuário cadastrado com esse e-mail");
     } finally {
       setLoading(false);
+      form.reset();
     }
   };
 

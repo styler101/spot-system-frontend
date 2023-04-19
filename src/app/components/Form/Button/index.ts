@@ -21,5 +21,6 @@ export const Button = styled.button`
 
   &:disabled {
     background-color: #ccc !important;
+    cursor: not-allowed;
   }
 `;
