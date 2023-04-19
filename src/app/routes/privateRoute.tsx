@@ -1,4 +1,3 @@
-import { PropsWithChildren } from "react";
 import { Navigate } from "react-router-dom";
 
 type RouteProps = {

@@ -1,7 +1,8 @@
 import React from "react";
-import { Routes } from "@/app/routes/index";
 import GlobalStyles from "@/app/assets/styles/global";
+import { Routes } from "@/app/routes/index";
 import { ToastContainer } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 
 export function App() {

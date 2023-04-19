@@ -1,6 +1,6 @@
 import { Routes as Switch, Route, BrowserRouter } from "react-router-dom";
-import { SignIn } from "../pages/SignIn";
-import { Dashboard } from "../pages/Dashboard";
+import { SignIn } from "@/app/pages/SignIn";
+import { Dashboard } from "@/app/pages/Dashboard";
 import { PrivateRoute } from "./privateRoute";
 
 export function Routes() {
