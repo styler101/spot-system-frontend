@@ -1,7 +1,7 @@
 import React from "react";
 import { authenticationUseCase } from "./custom-hooks";
-import logo from "@/app/assets/images/logo.svg";
 import { ErrorLabel, Spinner, Button, Input } from "@/app/components";
+import logo from "@/app/assets/images/logo.svg";
 import * as S from "./styles";
 
 export function SignIn() {

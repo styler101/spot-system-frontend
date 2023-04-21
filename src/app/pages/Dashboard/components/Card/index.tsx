@@ -1,9 +1,5 @@
+import { CardProps } from "./protocols";
 import * as S from "./styles";
-import { DomainData } from "../../protocols";
-
-type CardProps = {
-  item: DomainData;
-};
 
 export function Card(props: CardProps) {
   const { company, price_jsx, thumbnail_jsx } = props.item;

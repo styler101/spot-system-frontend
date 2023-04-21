@@ -31,6 +31,7 @@ export const Field = styled.div`
   width: 100%;
   padding-top: 8px;
   margin-top: 16px;
+
   label {
     font-weight: normal;
     font-size: 16px;

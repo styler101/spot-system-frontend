@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
-import mapper from "../mapper";
 import { getAllSpots } from "../services";
 import { DomainData } from "../protocols";
+import mapper from "../mapper";
 import { toast } from "react-toastify";
 
 export function listSpotsUseCase() {

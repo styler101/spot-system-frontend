@@ -9,10 +9,7 @@ export type ResponseData = {
   price: number;
   techs: string[];
   thumbnail: string;
-  user: {
-    email: string;
-    id: string;
-  };
+  user: UserData;
 };
 
 export type DomainData = {
