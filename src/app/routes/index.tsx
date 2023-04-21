@@ -1,5 +1,5 @@
 import { PrivateRoute } from "./privateRoute";
-import { Dashboard, SignIn } from "@/app/pages";
+import { Dashboard, SignIn, New } from "@/app/pages";
 import { Routes as Switch, Route, BrowserRouter } from "react-router-dom";
 
 export function Routes() {
@@ -15,6 +15,14 @@ export function Routes() {
             </PrivateRoute>
           }
         />
+        <Route
+          path="/new"
+          element={
+            <PrivateRoute>
+              <New />
+            </PrivateRoute>
+          }
+        ></Route>
       </Switch>
     </BrowserRouter>
   );

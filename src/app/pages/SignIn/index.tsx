@@ -1,6 +1,7 @@
 import React from "react";
 import { authenticationUseCase } from "./custom-hooks";
 import { ErrorLabel, Spinner, Button, Input } from "@/app/components";
+import { Container } from "@/app/assets/styles/global";
 import logo from "@/app/assets/images/logo.svg";
 import * as S from "./styles";
 
@@ -14,7 +15,7 @@ export function SignIn() {
   } = form;
 
   return (
-    <S.Container>
+    <Container>
       <img src={logo} alt="Logo do projeto" />
       <S.Form onSubmit={handleSubmit(onSumbit)}>
         <p>
@@ -43,6 +44,6 @@ export function SignIn() {
           </label>
         </S.Field>
       </S.Form>
-    </S.Container>
+    </Container>
   );
 }
