@@ -4,12 +4,15 @@ type UserData = {
 };
 
 export type ResponseData = {
-  id: string;
   company: string;
+  id: string;
   price: number;
   techs: string[];
   thumbnail: string;
-  user: UserData;
+  user: {
+    email: string;
+    id: string;
+  };
 };
 
 export type DomainData = {
