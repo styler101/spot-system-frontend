@@ -1,9 +1,11 @@
+import { useState } from "react";
+import { Card } from "./components";
 import { Button } from "@/app/components/Form/Button";
 import logo from "@/app/assets/images/logo.svg";
-import { Card } from "./components";
 import * as S from "./styles";
 
 export function Dashboard() {
+  const [data, setData] = useState([]);
   return (
     <S.Container>
       <img src={logo} />
