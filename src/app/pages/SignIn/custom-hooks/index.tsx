@@ -34,8 +34,8 @@ export function authenticationUseCase() {
   const onSumbit = async ({ email }: FormData): Promise<void> => {
     setLoading(true);
     try {
-      const { id } = await authentication(email);
-      localStorage.setItem("@aircnc:user_id", id);
+      const userData = await authentication(email);
+      localStorage.setItem("@aircnc:user", JSON.stringify(userData));
       toast.success("Usuário Autencidado!");
       navigate("/dashboard");
     } catch (error) {

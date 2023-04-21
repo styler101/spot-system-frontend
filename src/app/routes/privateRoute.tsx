@@ -6,6 +6,9 @@ type RouteProps = {
 
 export function PrivateRoute(props: RouteProps) {
   const { children } = props;
-  let storagedData = localStorage.getItem("@aircnc:user_id");
-  return storagedData !== null ? children : <Navigate to={"/"} replace />;
+  let storagedData = localStorage.getItem("@aircnc:user");
+  let parsedStorageData =
+    storagedData === null ? null : JSON.parse(storagedData);
+  console.log(parsedStorageData);
+  return parsedStorageData !== null ? children : <Navigate to={"/"} replace />;
 }

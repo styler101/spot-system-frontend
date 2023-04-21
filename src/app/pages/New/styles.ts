@@ -19,7 +19,7 @@ export const Form = styled.form`
     margin: 8px 0;
 
     input {
-      width: 450px;
+      width: 435px;
     }
     strong > span {
       font-weight: normal;

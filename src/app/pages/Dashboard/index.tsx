@@ -10,6 +10,7 @@ import * as S from "./styles";
 export function Dashboard() {
   const { loading, data, loadData } = listSpotsUseCase();
   const navigate = useNavigate();
+
   useEffect(() => {
     loadData();
   }, []);
