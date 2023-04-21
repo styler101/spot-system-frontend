@@ -6,6 +6,15 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: flex-start;
   img {
-    width: 220px;
+    width: 200px;
+  }
+
+  strong {
+    margin: 8px 0;
+    font-size: 19px;
+  }
+
+  span {
+    color: #c8c8c8;
   }
 `;

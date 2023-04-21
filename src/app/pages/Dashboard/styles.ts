@@ -31,6 +31,7 @@ export const Wrapper = styled.div`
 
 export const GridArea = styled.div`
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   margin: 8px 0;
