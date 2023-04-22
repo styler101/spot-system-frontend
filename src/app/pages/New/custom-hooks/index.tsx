@@ -37,23 +37,25 @@ export function saveSpotUseCase() {
   const [loading, setLoading] = useState<boolean>(false);
 
   const storagedUser: any = localStorage.getItem("@aircnc:user");
+
   const onSubmit = async (data: FormData) => {
     let payload: any = {
       company: data.company,
       price: data.price === "" ? 0.0 : Number(data.price),
-      techs: data.techs.map((item) => item.split(",")),
+      techs: String(data.techs).split(","),
       thumbnail: data.thumbnail,
       user: JSON.parse(storagedUser),
     };
+
     setLoading(true);
     try {
       await createSpot(payload);
       toast.success("Spot cadastradado com sucesso!");
-      navigate("dashboard");
+      navigate("/dashboard");
     } catch (error) {
       toast.error("Erro ao cadastrar o spot");
     } finally {
-      setLoading(false);
+      setLoading(true);
     }
   };
 

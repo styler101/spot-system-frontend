@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Button, ErrorLabel } from "@/app/components";
+import { Input, Button, ErrorLabel, Spinner } from "@/app/components";
 import { useValidationUseCase, saveSpotUseCase } from "./custom-hooks";
 import { Container, Wrapper } from "@/app/assets/styles/global";
 import logo from "@/app/assets/images/logo.svg";
@@ -9,8 +9,6 @@ export function New() {
   const { form } = useValidationUseCase();
   const {
     register,
-    getValues,
-    watch,
     handleSubmit,
     formState: { errors, isValid },
   } = form;
@@ -68,8 +66,8 @@ export function New() {
               {...register("price")}
             />
           </label>
-          <Button type="submit" disabled={!isValid}>
-            Salvar
+          <Button disabled={!isValid}>
+            {loading ? <Spinner width="32px" height="32px" /> : "Salvar"}
           </Button>
         </S.Form>
       </Wrapper>
