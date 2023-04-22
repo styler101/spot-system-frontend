@@ -7,6 +7,7 @@ export const Container = styled.div`
   align-items: flex-start;
   img {
     width: 200px;
+    height: 150px;
   }
 
   strong {

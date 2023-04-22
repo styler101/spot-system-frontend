@@ -27,6 +27,27 @@ export default createGlobalStyle`
   a{
     text-decoration: none;
   }
+
+  ::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px 0 10px ;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 `;
 
 export const Container = styled.div`
